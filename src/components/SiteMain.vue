@@ -1,6 +1,8 @@
 <template>
   <main id="SiteMain">
-    <DiscList />
+    <div class="container">
+      <DiscList />
+    </div>
   </main>
 </template>
 
