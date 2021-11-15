@@ -19,5 +19,10 @@ export default {
 #SiteHeader {
   height: 70px;
   background-color: $backgroundColor;
+
+  img {
+    width: 50px;
+    margin: 10px;
+  }
 }
 </style>
