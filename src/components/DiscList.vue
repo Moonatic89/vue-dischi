@@ -1,6 +1,6 @@
 <template>
   <div id="DiscList">
-    <div class="row">
+    <div class="row" v-if="!loading">
       <div class="card" v-for="disk in disks" :key="disk.poster">
         <div class="disk">
           <img :src="disk.poster" alt="" />
@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+    <div class="loading" v-else>Loading...</div>
   </div>
 </template>
 
@@ -21,6 +22,7 @@ export default {
   data() {
     return {
       disks: [],
+      loading: true,
     };
   },
   mounted() {
@@ -28,7 +30,7 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((r) => {
         this.disks = r.data.response;
-        console.log(this.disks, "POLLO");
+        this.loading = false;
       });
   },
 };
