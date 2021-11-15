@@ -18,7 +18,7 @@ export default {
 
 #SiteHeader {
   height: 70px;
-  background-color: $backgroundColor;
+  background-color: $primaryColor;
 
   img {
     width: 50px;
