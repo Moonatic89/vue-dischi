@@ -5,7 +5,7 @@
         <div class="disk">
           <img :src="disk.poster" alt="" />
           <div class="text">
-            <h3></h3>{{ disk.title.toUpperCase() }}</h3>
+            <h3>{{ disk.title.toUpperCase() }}</h3>
             <span>{{ disk.author }}</span>
             <span>{{ disk.year }}</span>
           </div>
