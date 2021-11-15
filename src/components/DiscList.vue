@@ -5,7 +5,7 @@
         <div class="disk">
           <img :src="disk.poster" alt="" />
           <div class="text">
-            <h2>{{ disk.title }}</h2>
+            <h3></h3>{{ disk.title.toUpperCase() }}</h3>
             <span>{{ disk.author }}</span>
             <span>{{ disk.year }}</span>
           </div>
@@ -55,12 +55,15 @@ export default {
         }
 
         .text {
+          color: grey;
           display: flex;
           flex-direction: column;
           align-items: center;
 
-          h2 {
+          h3 {
+            color: white;
             margin: 1rem 0;
+            text-align: center;
           }
         }
       }
