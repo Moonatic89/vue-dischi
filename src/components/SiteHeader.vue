@@ -6,11 +6,7 @@
 
 
 <script>
-export default {
-  props: {
-    logoImage: String,
-  },
-};
+export default {};
 </script>
 
 <style lang="scss">

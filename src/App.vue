@@ -10,7 +10,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteMain from "./components/SiteMain";
 export default {
   name: "App",
-  data() {},
+
   components: {
     SiteHeader,
     SiteMain,

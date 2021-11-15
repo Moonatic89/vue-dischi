@@ -1,15 +1,16 @@
 <template>
-  <main id="SiteMain"></main>
+  <main id="SiteMain">
+    <DiscList />
+  </main>
 </template>
 
 <script>
-// import DiscList from "./DiscList.vue";
+import DiscList from "./DiscList.vue";
 
 export default {
-  //   name: "SiteMain",
-  //   components: {
-  //     DiscList,
-  //   },
+  components: {
+    DiscList,
+  },
 };
 </script>
 

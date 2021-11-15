@@ -1,19 +1,32 @@
 <template>
   <div id="DiscList">
-    <img :src="discImg" alt="" />
-    <h2>{{ discName }}</h2>
-    <span>{{ discAuthor }}</span>
-    <span>{{ discYear }}</span>
+    <div class="col-md-2" v-for="disk in disks" :key="disk.poster">
+      <div class="disk">
+        <img :src="disk.poster" alt="" />
+        <h2>{{ disk.title }}</h2>
+        <span>{{ disk.author }}</span>
+        <span>{{ disk.year }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  props: {
-    discImg: String,
-    discName: String,
-    discAuthor: String,
-    discYear: String,
+  data() {
+    return {
+      disks: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("https://flynn.boolean.careers/exercises/api/array/music")
+      .then((r) => {
+        this.disks = r.data.response;
+        console.log(this.disks, "POLLO");
+      });
   },
 };
 </script>
