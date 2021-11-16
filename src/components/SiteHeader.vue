@@ -6,7 +6,13 @@
     <div class="formGroup">
       <label for="diskGenre">Choose a Genre to filter:</label>
 
-      <select name="diskGenre" id="diskGenre">
+      <select
+        name="diskGenre"
+        id="diskGenre"
+        v-model="genreString"
+        @change="$emit('genreFilter', genreString)"
+      >
+        <option selected value="All">All</option>
         <option v-for="genre in genresArr" :key="genre" :value="genre">
           {{ genre }}
         </option>
@@ -23,11 +29,12 @@ export default {
     return {
       genresArr: [],
       authorsArr: [],
+      genreString: "",
     };
   },
   methods: {
     getGenres(objs) {
-      const uniqueGenres = ["All"];
+      const uniqueGenres = [];
       for (let i = 0; i < objs.length; i++) {
         if (!uniqueGenres.includes(objs[i].genre)) {
           uniqueGenres.push(objs[i].genre);
@@ -57,8 +64,14 @@ export default {
 
 #SiteHeader {
   display: flex;
+  align-items: center;
   height: 70px;
   background-color: $primaryColor;
+
+  label {
+    color: white;
+    padding: 1rem;
+  }
 
   img {
     width: 50px;

@@ -7,6 +7,7 @@
             <img :src="disk.poster" alt="" />
             <div class="text">
               <h3>{{ disk.title.toUpperCase() }}</h3>
+              <h2>{{ diskFilter }}</h2>
               <span>{{ disk.author }}</span>
               <span>{{ disk.year }}</span>
             </div>
@@ -21,6 +22,9 @@
 <script>
 import axios from "axios";
 export default {
+  props: {
+    diskFilter: String,
+  },
   data() {
     return {
       disks: [],

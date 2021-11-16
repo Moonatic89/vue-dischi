@@ -10,14 +10,18 @@ import SiteHeader from "./components/SiteHeader";
 import SiteMain from "./components/SiteMain";
 export default {
   name: "App",
-
+  data() {
+    return {
+      genreFilter: "",
+    };
+  },
   components: {
     SiteHeader,
     SiteMain,
   },
   methods: {
-    test() {
-      console.log();
+    test(genreString) {
+      console.log(genreString);
     },
   },
 };
