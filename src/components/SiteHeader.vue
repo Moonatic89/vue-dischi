@@ -1,6 +1,18 @@
 <template>
   <header id="SiteHeader">
-    <img src="../assets/logo.svg" alt="Spotify Logo" />
+    <div class="logo">
+      <img src="../assets/logo.svg" alt="Spotify Logo" />
+    </div>
+    <div class="formGroup">
+      <label for="cars">Choose a car:</label>
+
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
   </header>
 </template>
 
@@ -13,6 +25,7 @@ export default {};
 @import "../assets/scss/colors.scss";
 
 #SiteHeader {
+  display: flex;
   height: 70px;
   background-color: $primaryColor;
 
