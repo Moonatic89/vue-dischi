@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <SiteHeader @genreFilter="genreToFilter" />
-    <SiteMain />
+    <SiteMain :childFilter="genreFilter" />
   </div>
 </template>
 

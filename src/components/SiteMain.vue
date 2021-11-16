@@ -10,13 +10,13 @@
 import DiscList from "./DiscList.vue";
 
 export default {
+  props: {
+    childFilter: String,
+  },
   data() {
     return {
-      diskFilter: this.genreFilter,
+      diskFilter: this.childFilter,
     };
-  },
-  props: {
-    genreFilter: String,
   },
   components: {
     DiscList,
