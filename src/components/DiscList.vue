@@ -2,12 +2,11 @@
   <div id="DiscList">
     <div class="row" v-if="!loading">
       <div class="card" v-for="disk in disks" :key="disk.poster">
-        <div class="cover">
+        <div class="cover" v-show="disk.genre.includes(diskFilter)">
           <div class="disk">
             <img :src="disk.poster" alt="" />
             <div class="text">
               <h3>{{ disk.title.toUpperCase() }}</h3>
-              <h2>{{ diskFilter }}</h2>
               <span>{{ disk.author }}</span>
               <span>{{ disk.year }}</span>
             </div>
@@ -31,6 +30,7 @@ export default {
       loading: true,
     };
   },
+  methods: {},
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")

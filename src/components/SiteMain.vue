@@ -1,7 +1,7 @@
 <template>
   <main id="SiteMain">
     <div class="container">
-      <DiscList />
+      <DiscList :diskFilter="childFilter" />
     </div>
   </main>
 </template>
@@ -13,11 +13,11 @@ export default {
   props: {
     childFilter: String,
   },
-  data() {
-    return {
-      diskFilter: this.childFilter,
-    };
-  },
+  // data() {
+  //   return {
+  //     diskFilter: this.childFilter,
+  //   };
+  // },
   components: {
     DiscList,
   },
