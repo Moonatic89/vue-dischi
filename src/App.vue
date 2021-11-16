@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SiteHeader />
+    <SiteHeader @genreFilter="test" />
     <SiteMain />
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     SiteHeader,
     SiteMain,
+  },
+  methods: {
+    test() {
+      console.log();
+    },
   },
 };
 </script>
