@@ -22,8 +22,6 @@ export default {
   methods: {
     genreToFilter(text) {
       this.genreFilter = text;
-      console.log(text);
-      console.log(this.genreFilter);
     },
   },
 };
