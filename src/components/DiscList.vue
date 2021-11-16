@@ -2,12 +2,14 @@
   <div id="DiscList">
     <div class="row" v-if="!loading">
       <div class="card" v-for="disk in disks" :key="disk.poster">
-        <div class="disk">
-          <img :src="disk.poster" alt="" />
-          <div class="text">
-            <h3>{{ disk.title.toUpperCase() }}</h3>
-            <span>{{ disk.author }}</span>
-            <span>{{ disk.year }}</span>
+        <div class="cover">
+          <div class="disk">
+            <img :src="disk.poster" alt="" />
+            <div class="text">
+              <h3>{{ disk.title.toUpperCase() }}</h3>
+              <span>{{ disk.author }}</span>
+              <span>{{ disk.year }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -43,29 +45,37 @@ export default {
   .row {
     display: flex;
     flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
     justify-content: center;
 
     .card {
-      background-color: $primaryColor;
-      width: 200px;
-      margin: 2rem;
-      .disk {
-        padding: 0.5rem 1rem;
+      width: calc(100% / 6);
+      margin-bottom: 1rem;
 
-        img {
-          width: 100%;
-        }
+      .cover {
+        height: 100%;
+        margin: 1rem;
+        background-color: $primaryColor;
 
-        .text {
-          color: grey;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .disk {
+          padding: 0.5rem;
 
-          h3 {
-            color: white;
-            margin: 1rem 0;
-            text-align: center;
+          img {
+            width: 100%;
+          }
+
+          .text {
+            color: grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3 {
+              color: white;
+              margin: 1rem 0;
+              text-align: center;
+            }
           }
         }
       }
