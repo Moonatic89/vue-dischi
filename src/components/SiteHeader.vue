@@ -4,18 +4,12 @@
       <img src="../assets/logo.svg" alt="Spotify Logo" />
     </div>
     <div class="formGroup">
-      <label for="cars">Choose a car:</label>
+      <label for="diskGenre">Choose a Genre to filter:</label>
 
-      <select name="cars" id="cars">
-        <option v-for="genre in genresArr" :key="genre" value="genre">
+      <select name="diskGenre" id="diskGenre">
+        <option v-for="genre in genresArr" :key="genre" :value="genre">
           {{ genre }}
         </option>
-
-        <!--         
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option> -->
       </select>
     </div>
   </header>
@@ -33,7 +27,7 @@ export default {
   },
   methods: {
     getGenres(objs) {
-      const uniqueGenres = [];
+      const uniqueGenres = ["All"];
       for (let i = 0; i < objs.length; i++) {
         if (!uniqueGenres.includes(objs[i].genre)) {
           uniqueGenres.push(objs[i].genre);
