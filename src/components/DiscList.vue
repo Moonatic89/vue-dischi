@@ -1,8 +1,13 @@
 <template>
   <div id="DiscList">
     <div class="row" v-if="!loading">
-      <div class="card" v-for="disk in disks" :key="disk.poster">
-        <div class="cover" v-show="disk.genre.includes(diskFilter)">
+      <div
+        class="card"
+        v-for="disk in disks"
+        :key="disk.poster"
+        v-show="smartFilter(disk)"
+      >
+        <div class="cover">
           <div class="disk">
             <img :src="disk.poster" alt="" />
             <div class="text">
@@ -30,7 +35,15 @@ export default {
       loading: true,
     };
   },
-  methods: {},
+  methods: {
+    smartFilter(disk) {
+      if (this.diskFilter == "All") {
+        return true;
+      } else {
+        return disk.genre.includes(this.diskFilter);
+      }
+    },
+  },
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
