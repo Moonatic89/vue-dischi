@@ -5,7 +5,9 @@
     </div>
     <div class="formGroup">
       <label for="diskGenre">Choose a Genre to filter:</label>
-
+      <!-- 
+  This passes value from Child (this) to parent (App)
+ -->
       <select
         name="diskGenre"
         id="diskGenre"

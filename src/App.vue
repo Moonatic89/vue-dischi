@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SiteHeader @genreFilter="test" />
+    <SiteHeader @genreFilter="genreToFilter" />
     <SiteMain />
   </div>
 </template>
@@ -20,8 +20,10 @@ export default {
     SiteMain,
   },
   methods: {
-    test(genreString) {
-      console.log(genreString);
+    genreToFilter(text) {
+      this.genreFilter = text;
+      console.log(text);
+      console.log(this.genreFilter);
     },
   },
 };
